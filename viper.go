@@ -453,6 +453,8 @@ func (v *Viper) getEnv(key string) (string, bool) {
 		key = v.envKeyReplacer.Replace(key)
 	}
 
+	fmt.Println(key)
+
 	val, ok := os.LookupEnv(key)
 
 	return val, ok && (v.allowEmptyEnv || val != "")
